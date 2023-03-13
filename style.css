@@ -44,3 +44,17 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* ====== Style ====== */
+body {
+    font-family: var(--ff);
+    min-height: 100%;
+    display: grid;
+    row-gap: 2rem;
+    place-content: center;
+    text-align: center;
+}
+
+.container {
+    margin-inline: 1.75rem;
+    display: grid;
+    row-gap: 5rem;
+}
