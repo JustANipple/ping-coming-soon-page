@@ -33,6 +33,7 @@ p, h1, h2, h3, h4, h5, h6 {
     --placeholder-clr: hsl(223, 100%, 88%);
     --error-clr: hsl(354, 100%, 66%);
     --txt-clr: hsl(0, 0%, 59%);
+    --social-border-clr: hsla(0, 0%, 59%, 0.3);
     --bold-clr: hsl(209, 33%, 12%);
     /* Font */
     --ff: 'Libre Franklin', sans-serif;
@@ -57,8 +58,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     gap: 2rem;
-    margin-block-start: 5rem;
+    margin-block-start: 5.5rem;
     margin-inline: 2rem;
 }
 
@@ -69,7 +71,7 @@ body {
 .text {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.825rem;
 }
 
 .sr-title {
@@ -102,15 +104,29 @@ body {
     opacity: 0;
 }
 
+.emailAndBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 #email {
     border: 1px solid var(--placeholder-clr);
     border-radius: 1.5rem;
-    padding: 0.375rem 2rem;
+    padding: 0.5rem 2rem;
+    outline: none;  
 }
 
 #email::placeholder {
     font-size: 0.75rem;
     color: var(--placeholder-clr);
+}
+
+.error-text {
+    color: var(--error-clr);
+    font-size: 0.75rem;
+    margin-block: 0.25rem 0;
+    display: none;
 }
 
 .notify {
@@ -121,4 +137,53 @@ body {
     font-size: 0.75rem;
     color: white;
     box-shadow: 0 0.5rem 1rem -0.5rem var(--btn-social-clr);
+    width: 100%;
+}
+
+.illustration {
+    margin-block: 2.5rem;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-block-end: 2rem;
+}
+
+.social {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.social div {
+    color: var(--btn-social-clr);
+    border: 1px solid var(--social-border-clr);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.copyright {
+    color: var(--txt-clr);
+    font-size: 0.625rem;
+}
+
+/* ====== Active states ====== */
+.notify:hover {
+    filter: saturate(0.8) brightness(1.1);
+    transition: filter 0.2s ease-in-out;
+}
+
+.social div:hover {
+    background-color: var(--btn-social-clr);
+    color: white;
+    transition: 
+    background-color 0.3s ease-in-out,
+    color 0.1s ease-in-out;
 }
