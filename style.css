@@ -51,6 +51,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* ====== Main ====== */
@@ -64,8 +65,8 @@ body {
 /* ====== Logo ====== */
 .logo {
   max-width: 3.5rem;
-  padding-block: 1.5rem;
   margin-inline: auto;
+  padding-block: 0.5rem;
 }
 
 /* ====== Text ====== */
@@ -96,11 +97,11 @@ body {
 
 /* ====== Form ====== */
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 0.5rem;
   width: 100%;
   padding-inline: 1.5rem;
+  height: min-content;
 }
 
 .label {
@@ -187,4 +188,60 @@ body {
   color: white;
   transition: background-color 0.5s ease-in-out,
   color 0.25s ease-in-out;
+}
+
+
+/* ====== Desktop view ====== */
+@media screen and (min-width: 1440px) {
+  body {
+    font-size: var(--fs);
+  }
+
+  /* ====== Main ====== */
+  .container {
+    grid-template-rows: 0.75fr 1.5fr 1.5fr 5fr;
+    max-width: 40rem;
+    margin-block: 3.5rem;
+  }
+
+  /* ====== Logo ====== */
+  .logo {
+    max-width: unset;
+    padding-block: 2rem;
+    margin-inline: auto;
+  }
+
+  /* ====== Text ====== */
+  .text {
+    margin-block: 0.5rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subscribe {
+    font-size: 1.25rem;
+  }
+  
+  /* ====== Form ====== */
+  .form {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #email {
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    height: max-content;
+  }
+
+  .notify {
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 1rem 4rem;
+    height: max-content;
+  }
+  
 }
